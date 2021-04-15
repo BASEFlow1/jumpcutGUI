@@ -1,5 +1,6 @@
 # jumpcutGUI
-If someone who can't code made a simple GUI for a python script... oh wait this is exactly what this is
+If someone who can't code made a simple GUI for a python script... oh wait this is exactly what this is.
+
 As said, this is just a GUI, the actual python script can be found [here](https://github.com/carykh/jumpcutter "here").
 
 ------------
