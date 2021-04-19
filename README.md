@@ -5,7 +5,7 @@ Imagine if someone who can't code made a simple GUI for a python script... oh wa
 As said, this is just a GUI, the actual python script can be found [here](https://github.com/carykh/jumpcutter "here"), however, it can be downloaded from the app itself.
 
 ------------
-You need python (obviously), ffmpeg and all these python dependencies:
+You need python (obviously), [ffmpeg](https://ffmpeg.org/download.html#build-windows "ffmpeg") and all these python dependencies:
 - Pillow
 - audiotsm
 - scipy
