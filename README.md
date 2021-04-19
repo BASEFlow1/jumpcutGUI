@@ -12,6 +12,6 @@ You need python (obviously), ffmpeg and all these python dependencies:
 - numpy
 - pytube
 
-they can also be found in the requirements file of the original repo
+they can also be found in the requirements file of the original repo or be installed directly through the app
 
 Both python and ffmpeg must be in PATH
