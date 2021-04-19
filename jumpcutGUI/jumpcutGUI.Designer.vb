@@ -51,6 +51,7 @@ Partial Class jumpcutGUI
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button6 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'attribLabel
@@ -84,18 +85,18 @@ Partial Class jumpcutGUI
         '
         'Label1
         '
-        Me.Label1.Location = New System.Drawing.Point(32, 54)
+        Me.Label1.Location = New System.Drawing.Point(-9, 54)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(86, 23)
+        Me.Label1.Size = New System.Drawing.Size(127, 23)
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "Input File"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label2
         '
-        Me.Label2.Location = New System.Drawing.Point(32, 85)
+        Me.Label2.Location = New System.Drawing.Point(-9, 85)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(86, 23)
+        Me.Label2.Size = New System.Drawing.Size(127, 23)
         Me.Label2.TabIndex = 6
         Me.Label2.Text = "Output File"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -126,13 +127,13 @@ Partial Class jumpcutGUI
         Me.soundedSpeedText.Name = "soundedSpeedText"
         Me.soundedSpeedText.Size = New System.Drawing.Size(312, 23)
         Me.soundedSpeedText.TabIndex = 7
-        Me.soundedSpeedText.Text = "1.0"
+        Me.soundedSpeedText.Text = "1"
         '
         'Label3
         '
-        Me.Label3.Location = New System.Drawing.Point(32, 115)
+        Me.Label3.Location = New System.Drawing.Point(-9, 115)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(95, 23)
+        Me.Label3.Size = New System.Drawing.Size(136, 23)
         Me.Label3.TabIndex = 8
         Me.Label3.Text = "Sounded Speed"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -143,13 +144,13 @@ Partial Class jumpcutGUI
         Me.silentSpeedText.Name = "silentSpeedText"
         Me.silentSpeedText.Size = New System.Drawing.Size(312, 23)
         Me.silentSpeedText.TabIndex = 9
-        Me.silentSpeedText.Text = "5.0"
+        Me.silentSpeedText.Text = "5"
         '
         'Label4
         '
-        Me.Label4.Location = New System.Drawing.Point(32, 144)
+        Me.Label4.Location = New System.Drawing.Point(-9, 144)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(95, 23)
+        Me.Label4.Size = New System.Drawing.Size(136, 23)
         Me.Label4.TabIndex = 10
         Me.Label4.Text = "Silent Speed"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -164,9 +165,9 @@ Partial Class jumpcutGUI
         '
         'Label5
         '
-        Me.Label5.Location = New System.Drawing.Point(32, 173)
+        Me.Label5.Location = New System.Drawing.Point(-9, 173)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(95, 23)
+        Me.Label5.Size = New System.Drawing.Size(136, 23)
         Me.Label5.TabIndex = 12
         Me.Label5.Text = "Silent Threshold"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -181,15 +182,16 @@ Partial Class jumpcutGUI
         '
         'Label6
         '
-        Me.Label6.Location = New System.Drawing.Point(32, 202)
+        Me.Label6.Location = New System.Drawing.Point(-9, 202)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(95, 23)
+        Me.Label6.Size = New System.Drawing.Size(136, 23)
         Me.Label6.TabIndex = 14
         Me.Label6.Text = "Frame Margin"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'sampleRateText
         '
+        Me.sampleRateText.Enabled = False
         Me.sampleRateText.Location = New System.Drawing.Point(133, 230)
         Me.sampleRateText.Name = "sampleRateText"
         Me.sampleRateText.Size = New System.Drawing.Size(312, 23)
@@ -198,9 +200,9 @@ Partial Class jumpcutGUI
         '
         'Label7
         '
-        Me.Label7.Location = New System.Drawing.Point(32, 231)
+        Me.Label7.Location = New System.Drawing.Point(-9, 231)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(95, 23)
+        Me.Label7.Size = New System.Drawing.Size(136, 23)
         Me.Label7.TabIndex = 16
         Me.Label7.Text = "Sample Rate"
         Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -215,9 +217,9 @@ Partial Class jumpcutGUI
         '
         'Label8
         '
-        Me.Label8.Location = New System.Drawing.Point(32, 260)
+        Me.Label8.Location = New System.Drawing.Point(-9, 260)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(95, 23)
+        Me.Label8.Size = New System.Drawing.Size(136, 23)
         Me.Label8.TabIndex = 18
         Me.Label8.Text = "Framerate"
         Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -232,9 +234,9 @@ Partial Class jumpcutGUI
         '
         'Label9
         '
-        Me.Label9.Location = New System.Drawing.Point(32, 289)
+        Me.Label9.Location = New System.Drawing.Point(-9, 289)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(95, 23)
+        Me.Label9.Size = New System.Drawing.Size(136, 23)
         Me.Label9.TabIndex = 20
         Me.Label9.Text = "Frame Quality"
         Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -258,9 +260,9 @@ Partial Class jumpcutGUI
         '
         'Label10
         '
-        Me.Label10.Location = New System.Drawing.Point(25, 20)
+        Me.Label10.Location = New System.Drawing.Point(-9, 20)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(86, 36)
+        Me.Label10.Size = New System.Drawing.Size(120, 36)
         Me.Label10.TabIndex = 24
         Me.Label10.Text = "jumpcutter.py Location"
         Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -283,11 +285,21 @@ Partial Class jumpcutGUI
         Me.Button5.Text = "Download File"
         Me.Button5.UseVisualStyleBackColor = True
         '
+        'Button6
+        '
+        Me.Button6.Location = New System.Drawing.Point(12, 350)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(99, 38)
+        Me.Button6.TabIndex = 26
+        Me.Button6.Text = "Install Python Dependencies"
+        Me.Button6.UseVisualStyleBackColor = True
+        '
         'jumpcutGUI
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(587, 412)
+        Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.cutterLocationText)
         Me.Controls.Add(Me.Label10)
@@ -350,4 +362,5 @@ Partial Class jumpcutGUI
     Friend WithEvents Label10 As Label
     Friend WithEvents Button4 As Button
     Friend WithEvents Button5 As Button
+    Friend WithEvents Button6 As Button
 End Class

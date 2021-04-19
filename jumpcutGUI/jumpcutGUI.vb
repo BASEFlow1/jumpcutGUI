@@ -1,4 +1,4 @@
-﻿Imports System.Configuration
+﻿Imports MediaInfo
 Public Class jumpcutGUI
     Public Function FileExists(filename As String) As Boolean
         FileExists = Len(Dir(filename, vbNormal)) > 0
@@ -51,29 +51,54 @@ Public Class jumpcutGUI
         Dim sampleRate As Decimal = Convert.ToDecimal(sampleRateText.Text)
         Dim frameRate As Decimal = Convert.ToDecimal(frameMarginText.Text)
         Dim frameQuality As Decimal = Convert.ToDecimal(frameQualityText.Text)
-        If input.Contains("https://") Then
-            Process.Start("CMD", "/K python jumpcutter.py --url " & input & " --output_file """ & output & """ --silent_threshold " & silentThreshold & " --sounded_speed " & soundedSpeed & " --silent_speed " & silentSpeed & " --frame_margin " & frameMargin & " --sample_rate " & sampleRate & " --frame_rate " & frameRate & " --frame_quality " & frameQuality)
+        If String.IsNullOrEmpty(inputText.Text) = False Then
+            If input.Contains("https://") Then
+                Process.Start("cmd", "/k python jumpcutter.py --url " & input & " --output_file """ & output & """ --sounded_speed " & soundedSpeed & " --silent_speed " & silentSpeed & " --frame_margin " & frameMargin & " --sample_rate " & sampleRate & " --frame_rate " & frameRate & " --frame_quality " & frameQuality)
+            Else
+                Process.Start("cmd", "/k python jumpcutter.py --input_file """ & input & """ --output_file """ & output & """ --sounded_speed " & soundedSpeed & " --silent_speed " & silentSpeed & " --frame_margin " & frameMargin & " --sample_rate " & sampleRate & " --frame_rate " & frameRate & " --frame_quality " & frameQuality)
+            End If
         Else
-            Process.Start("CMD", "/K python jumpcutter.py --input_file """ & input & """ --output_file """ & output & """ --silent_threshold " & silentThreshold & " --sounded_speed " & soundedSpeed & " --silent_speed " & silentSpeed & " --frame_margin " & frameMargin & " --sample_rate " & sampleRate & " --frame_rate " & frameRate & " --frame_quality " & frameQuality)
+            MsgBox("Input textbox must be filled")
         End If
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         inputFileDialog.Title = "Please Select a File"
         inputFileDialog.InitialDirectory = "C:temp"
-        'inputFileDialog.Filter = "Python File|.py"
+        inputFileDialog.Filter = "Python File|*.py"
         inputFileDialog.ShowDialog()
         inputText.Text = inputFileDialog.FileName.ToString()
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        Dim urlPy As String
+        Dim urlReq As String
+        urlPy = "https://raw.githubusercontent.com/carykh/jumpcutter/master/jumpcutter.py"
+        urlReq = "https://raw.githubusercontent.com/carykh/jumpcutter/master/requirements.txt"
         Process.Start("CMD", "/C RMDIR /S /Q TEMP")
+        If FileExists("requirements.txt") = False Then
+            My.Computer.Network.DownloadFile(
+            urlReq,
+            "requirements.txt")
+        Else
+            MsgBox("requirements.txt is already present in root folder")
+        End If
         If FileExists("jumpcutter.py") = False Then
             My.Computer.Network.DownloadFile(
-            "https://raw.githubusercontent.com/carykh/jumpcutter/master/jumpcutter.py",
+            urlPy,
             "jumpcutter.py")
-            Button5.Enabled = False
-            Button5.Text = "Done!"
+            If FileExists("jumpcutter.py") Then
+                If FileExists("requirements.txt") Then
+                    Button5.Enabled = False
+                    Button5.Text = "Done!"
+                Else
+                    MsgBox("Something went wrong and the files were not downloaded correctly")
+                End If
+
+            Else
+                MsgBox("Something went wrong and the file was not downloaded correctly")
+            End If
+
         Else
             MsgBox("jumpcutter.py is already present in root folder")
         End If
@@ -81,5 +106,13 @@ Public Class jumpcutGUI
 
     Private Sub Button6_Click(sender As Object, e As EventArgs)
 
+    End Sub
+
+    Private Sub Button6_Click_1(sender As Object, e As EventArgs) Handles Button6.Click
+        If FileExists("requirements.txt") Then
+            Process.Start("CMD", "/C python -m pip install -r requirements.txt")
+        Else
+            MsgBox("requirements.txt is not present in root folder. Click the ""Download File"" Button to download it.")
+        End If
     End Sub
 End Class
