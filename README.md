@@ -1,8 +1,7 @@
 # jumpcutGUI
 
-Imagine if someone who can't code made a simple GUI for a python script... oh wait that's exactly what this is.
 
-As said, this is just a GUI, the actual python script can be found [here](https://github.com/carykh/jumpcutter "here"), however, it can be downloaded from the app itself.
+This is just a GUI, the actual python script can be found [here](https://github.com/carykh/jumpcutter "here"), however, it can also be downloaded from the app itself.
 
 ------------
 You need python (obviously), [ffmpeg](https://ffmpeg.org/download.html "ffmpeg") and all these python dependencies:
